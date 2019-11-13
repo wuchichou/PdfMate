@@ -3,14 +3,14 @@
     <!--this file was created by Eclipse Runnable JAR Export Wizard-->
     <!--ANT 1.7 is required                                        -->
     <target name="create_run_jar">
-        <jar destfile="/Users/dongli/Works/eclipse/pdfmate/products/installer/payload/pdfmate.jar" filesetmanifest="mergewithoutmain">
+        <jar destfile="/Users/JizhouWu/Downloads/PdfMate/products/installer/payload/pdfmate.jar" filesetmanifest="mergewithoutmain">
             <manifest>
                 <attribute name="Main-Class" value="pdfmate.operator.Master"/>
                 <attribute name="Class-Path" value="."/>
             </manifest>
-            <fileset dir="/Users/dongli/Works/eclipse/pdfmate/bin"/>
-            <zipfileset excludes="META-INF/*.SF" src="/Users/dongli/Works/eclipse/pdfmate/lib/itextpdf-5.4.3.jar"/>
-            <zipfileset excludes="META-INF/*.SF" src="/Users/dongli/Works/eclipse/pdfmate/lib/jline-2.12-SNAPSHOT.jar"/>
+            <fileset dir="/Users/JizhouWu/Downloads/PdfMate/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/JizhouWu/Downloads/PdfMate/lib/itextpdf-5.4.3.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/JizhouWu/Downloads/PdfMate/lib/jline-2.12-SNAPSHOT.jar"/>
         </jar>
     </target>
 </project>

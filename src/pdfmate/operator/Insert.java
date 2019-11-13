@@ -60,12 +60,19 @@ public class Insert {
 							Charset.forName(encoding)));
 			String line = null;
 			int lastLevel = -1;
+
+			// for the pageshift
+			int pageShift = 0;
+			if (CommandLine.hasOption("--shift")){
+				pageShift = Integer.parseInt(CommandLine.getOptionValue("--shift"));
+			}
+			
 			while ((line = inputBuffer.readLine()) != null) {
 				if (!line.matches("(^ *#.*|^\\s*$)")) {
 					String[] tmp = splitTocEntry(line);
 					String hierLevel = tmp[0];
 					String title = tmp[1];
-					Integer pageNumber = new Integer(tmp[2]);
+					Integer pageNumber = Integer.parseInt(tmp[2]) + pageShift;
 					// determine the hierarchy level
 					Pattern dotPattern = Pattern.compile("\\.");
 					Matcher matcher = dotPattern.matcher(hierLevel);
@@ -107,7 +114,7 @@ public class Insert {
 		int i = 0;
 		while (entry.charAt(i) != ' ')
 			res[0] += entry.charAt(i++);
-		if (!res[0].matches("(\\w+\\.)|(\\w+)|(-)|(.)"))
+		if (!res[0].matches("(\\w+\\.)|(\\w+)|(-)|(\\.+)"))
 			UI.error("pdfmate", "The hierarchy level \""+
 					res[0]+"\" in TOC entry \""+entry+"\" is not valid!");
 		int j = entry.length()-1;

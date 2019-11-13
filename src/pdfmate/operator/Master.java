@@ -45,6 +45,9 @@ public class Master {
 				"Text file contains contents information", false, null, null);
 		CommandLine.addOption("insert-toc",
 				"--toc", "Specify the TOC text file", true, "TOC file");
+		// add the page shift option for the toc generator
+		CommandLine.addOption("insert-toc",
+				"--shift", "Specify the page shift of the PDF file", true, "The shift page (If page 1 is in page n of pdf file, then the shift page is n-1)");
 		CommandLine.addOption("insert-toc",
 				"--encoding", "Specify the encoding of TOC text file",
 				true, "TOC file encoding (default is UTF-8)");
