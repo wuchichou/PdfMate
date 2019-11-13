@@ -1,3 +1,14 @@
+This is forked from [Li Dong](https://github.com/dongli/PdfMate). 
+Two modifications I've made:
+- correct one problem when there are '..' or '...' etc as the subsection subsubsection marker. 
+- add the page shift option
+
+The modified installer can be found [here](https://github.com/wuchichou/PdfMate/raw/master/products/installer/pdfmate.installer) and `--shift` can be used to specify the page shift
+```
+$ pdfmate insert-toc <path to PDF> --toc <path to outputted TOC text file> --shift <shifted pgae No.>
+```
+Other details can be found in the original README.md below:
+
 # Description
 
 **PdfMate** is a small tool that provides several utilities to deal with PDF files. For the time being, its main function is to add the missing *TOC* (Table Of Content) into the PDF files and only command line interface is provided.
